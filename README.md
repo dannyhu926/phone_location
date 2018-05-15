@@ -9,10 +9,16 @@ select * from phone_location where phone like "1337785%" limit 1;
 $chunkSize = 200;
 $startRow = 2; //从第二行开始读取
 while (true) {
+
     $data = $this->readFilterData($startRow, $chunkSize);
+    
     if(empty($data)){
+    
         break;
+        
     }
+    
+    
     //todo logic here
     $startRow = $startRow + $chunkSize + 1;
 }
