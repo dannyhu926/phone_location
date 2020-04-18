@@ -19,6 +19,24 @@
  * }
  * }
  */
+ 
+function callApi($url,$demoKey, demoSign) {
+	$url = sprintf(
+		"http://api.k780.com/?app=phone.get&phone=%d1111&appkey=%s&sign=%s&format=json",
+		$phonePref,
+		$demoKey,
+		$demoSign
+	);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	$result = curl_exec($ch);
+	$arr = json_decode($result, true);
+	return $arr;
+} 
+
+
 $demoKey = '10003';
 $demoSign = 'b59bc3ef6191eb9f747dd4e83c99f2a4';
 do {
@@ -26,18 +44,8 @@ do {
     $list = $this->conn->fetchAll($sql);
     foreach ($list as $info) {
         $phonePref = $info['phone'];
-        $url = sprintf(
-            "http://api.k780.com/?app=phone.get&phone=%d1111&appkey=%s&sign=%s&format=json",
-            $phonePref,
-            $demoKey,
-            $demoSign
-        );
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-        $result = curl_exec($ch);
-        $arr = json_decode($result, true);
+		$url = 'http://api.ip138.com/mobile/?mobile='.$phonePref.'1111&datatype=jsonp&callback=&token=cc87f3c77747bccbaaee35006da1ebb65e0bad57';
+		$arr = callApi($url, $demoKey, demoSign);
         if ($arr['success']) {
             $rs = $arr['result'];
             if ($rs['status'] == 'ALREADY_ATT') {
