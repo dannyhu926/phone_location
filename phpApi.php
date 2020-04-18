@@ -40,6 +40,10 @@ do {
 				$sql = "update phone_location set city_code='{$rs['area']}',isp='{$rs['operators']}', post_code='{$rs['postno']}',province='{$cityArr['1']}',city='{$cityArr['2']}',pref='{$rs['prefix']}', flag=1 where phone='$phonePref'";
 				$output->writeln($sql);
 				$this->conn->exec($sql);
+			} else {
+				$sql = "update phone_location set flag=1 where phone='$phonePref'";
+				$output->writeln($sql);
+				$this->conn->exec($sql);
 			}
 		}
 	}
