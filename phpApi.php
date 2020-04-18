@@ -37,7 +37,7 @@ do {
 			$rs = $arr['result'];
 			if ($rs['status'] == 'ALREADY_ATT') {
 				$cityArr = explode(',', $rs['style_simcall']);
-				$sql = "update phone_location set city_code='{$rs['area']}', post_code='{$rs['postno']}',province='{$cityArr['1']}',city='{$cityArr['2']}',pref='{$rs['prefix']}', flag=1 where phone='$phonePref'";
+				$sql = "update phone_location set city_code='{$rs['area']}',isp='{$rs['operators']}', post_code='{$rs['postno']}',province='{$cityArr['1']}',city='{$cityArr['2']}',pref='{$rs['prefix']}', flag=1 where phone='$phonePref'";
 				$output->writeln($sql);
 				$this->conn->exec($sql);
 			}
