@@ -1,0 +1,160 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 12px verdana, arial, helvetica, sans-serif;
+	color: #fff;
+	background-color: #e5e5e5;
+	text-align: center;
+	line-height: 150%;
+}
+a {
+	color: #457;
+	font-weight: bolder;
+	text-decoration: none;
+}
+.a {
+	color: #457;
+	font-weight: bolder;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1 {
+	margin: -10px -10px 5px;
+	padding: 10px 10px 5px;
+	background: #333;
+	color: #fff;
+	font-size: 20px;
+	border-bottom: 3px solid #123;
+	text-shadow: -1px 2px 3px #111;
+}
+h1 a {
+	color: #fff;
+}
+/* Form ------------------------------------------------------------------- */
+
+label {
+	margin: 3px 0;
+	font-size: 90%;
+	font-weight: bolder;
+	display: block;
+}
+label.checkbox {
+	font-weight: normal;
+	display: inline;
+}
+input {
+	border: 1px solid #ccc;
+	padding: 3px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 11px;
+	background: white;
+	color: black;
+}
+input:hover {
+	border: 1px solid #6ad;
+}
+input.medium {
+	width: 220px;
+}
+input.inputtext {
+	border: 0;
+	width: auto;
+}
+input.submit {
+	margin-top: 10px;
+}
+#message {
+	border: 1px solid #ccc;
+	padding: 3px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 11px;
+	background: white;
+	color: black;
+	width:220px;
+	height:80px;
+}
+/* Construction ----------------------------------------------------------- */
+
+#dialog {
+	margin: 50px auto 0 auto;
+	background: #fff;
+	color: #222;
+	border: 3px solid #123;
+	padding: 10px;
+	width: 350px;
+	text-align: left;
+}
+.list {
+	margin-top: 6px;
+	text-align:left;
+}
+.paypal {
+	float:right;
+	margin-top:30px;
+	margin-right:10px;
+}
+#demo {
+	margin-top:10px;
+}
+.menu {
+	clear:both;
+	width:100%;
+	border:#CCCCCC dashed 1px;
+	margin-top:5px;
+}
+.menu li {
+	float:left;
+	margin-right:5px;
+}
+/* Login dialog ----------------------------------------------------------- */
+
+
+#div_li {
+	float: left;
+	width: 180px;
+}
+* html #div_li {
+	margin-top: 1px;
+}
+#submit span, #forgot-submit span {
+	padding-left: 8px;
+	font-size: 11px;
+}
+* html #submit span, * html #forgot-submit span {
+	position: relative;
+	top: -4px;
+}
+.div_li span {
+	padding-left:5px;
+	font-size:12px;
+	font-weight:normal;
+	color:#999;
+}
+.version {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-align:right;
+	color:#999;
+	font-size:9px;
+	height:10px;
+}
+/* Messages --------------------------------------------------------------- */
+
+.error, .success {
+	font-family: Verdana, Tahoma;
+	font-size: 12px;
+	margin: -5px -10px 0;
+	padding: 10px 20px;
+	text-align: left;
+}
+.error {
+	background: #a22;
+	color: #fff;
+}
+.success {
+	background: #cfc;
+	color: #051;
+}
