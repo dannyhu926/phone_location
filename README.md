@@ -22,6 +22,6 @@ select * from phone_location where phone like "1337785%" limit 1;
 #region.sql
 行政区划数据库_with+经纬度-省市区-邮编-区号-拼音-简称 3750条数据
 
-select city_code from region where level=2
+select city_code select * from region where LENGTH(city_code)>2 and level=2 
 
 
