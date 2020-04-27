@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 23/04/2020 21:19:53
+ Date: 27/04/2020 13:57:12
 */
 
 SET NAMES utf8mb4;
@@ -22,15 +22,16 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `area_code`;
 CREATE TABLE `area_code`  (
-  `provinceName` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '省份名称',
-  `cityName` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '城市名称',
+  `provinceName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '省份名称',
+  `cityName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '城市名称',
   `provinceAdcode` int(11) NULL DEFAULT NULL COMMENT '省份地域编码',
-  `provinceCenter` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '省份中心坐标',
-  `cityCode` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '城市区号',
+  `provinceCenter` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '省份中心坐标',
+  `cityCode` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '城市区号',
   `cityAdcode` int(11) NULL DEFAULT NULL COMMENT '城市地域编码',
-  `cityCenter` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '城市中心坐标',
+  `cityCenter` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '城市中心坐标',
   `districts` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '区域映射',
-  `isoCode` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '省份国际ISO编码'
+  `isoCode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '省份国际ISO编码',
+  INDEX `area`(`cityCode`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
