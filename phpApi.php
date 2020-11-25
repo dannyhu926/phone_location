@@ -4,12 +4,12 @@
  *
  * 0 省份 1城市 2邮编 3区号 4号码类型（1移动 2联通 3电信 4电信虚拟运营商 5联通虚拟运营商 6移动虚拟运营商）
  */
+$phone = '1367152';
+
 require __DIR__.'/phone_location/vendor/autoload.php';
 
 use QL\QueryList;
 
-
-$phone = '1300020';
 //$result = ip138_mobile_location_api($phone);
 //var_dump(11);die;
 $sql = "select phone from phone_location where phone='$phone'";
@@ -42,6 +42,7 @@ if (empty($info)) {
         $sql = "delete from not_found_number where phone='$phone' limit 1";
         $this->conn->exec($sql);
     } else {
+
         $result = ip138_mobile_location_api($phone);
         if (empty($result)) {
             $sql = "insert into not_found_number(phone,num) values($phone,1)";
