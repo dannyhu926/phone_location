@@ -32,7 +32,7 @@ CREATE TABLE `area_code`  (
   `districts` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '区域映射',
   `isoCode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '省份国际ISO编码',
   INDEX `area`(`cityCode`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=403 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='基于location_gaode手工整理后的表(用于匹配区号)';
 
 -- ----------------------------
 -- Records of area_code
