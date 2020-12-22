@@ -25,3 +25,10 @@ select * from phone_location where phone like "1337785%" limit 1;
 select city_code select * from region where LENGTH(city_code)>2 and level>1 
 
 
+
+报警电话110 电信
+电信客服 10000  
+联通客服 10010
+移动  10086
+
+
