@@ -1,5 +1,5 @@
 # phone_location.sql
-手机号码归属地数据库，2021年482051条数据  手机归属地查询，运营商，邮编，区号。
+手机号码归属地数据库，2022年3月 482265条数据  手机归属地查询，运营商，邮编，区号。
 手机号可以携号转网归属运营商不一定准确
 
 数据库收录未知的号码，通过第三方网站补充完善手机号码归属地数据库
@@ -30,5 +30,8 @@ select city_code select * from region where LENGTH(city_code)>2 and level>1
 联通客服 10010
 
 移动  10086
+
+
+判断移动，联通，电信  select isp from phone_location where pref='130'
 
 
