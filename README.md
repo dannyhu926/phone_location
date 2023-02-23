@@ -3,8 +3,14 @@
 手机号可以携号转网归属运营商不一定准确
 
 首先普及一下11位手机号的构成规则
-前3位———网络识别号；　　
-第4-7位———地区编码；所以把你的号码前7位放到度娘搜索就知道哪个城市
+
+前3位———网络识别号；
+
+判断移动，联通，电信  select isp from phone_location where pref='130';
+
+第4-7位———地区编码；
+
+所以把你的号码前7位放到度娘搜索就知道哪个城市
 
 数据库收录未知的号码，通过第三方网站补充完善手机号码归属地数据库
 
@@ -35,7 +41,5 @@ select city_code select * from region where LENGTH(city_code)>2 and level>1
 
 移动  10086
 
-
-判断移动，联通，电信  select isp from phone_location where pref='130';
 
 SELECT count(DISTINCT city_code) aa, city from phone GROUP BY city HAVING aa>1
