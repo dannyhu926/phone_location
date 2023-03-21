@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 11/03/2022 10:42:45
+ Date: 15/03/2023 10:45:49
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `area_code`  (
   `districts` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL COMMENT '区域映射',
   `isoCode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '省份国际ISO编码',
   INDEX `area`(`cityCode`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 999 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '基于location_gaode手工整理后的表(用于匹配区号)' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1594 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '基于location_gaode手工整理后的表(用于匹配区号)' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of area_code
@@ -252,7 +252,7 @@ INSERT INTO `area_code` VALUES ('新疆维吾尔自治区', '石河子', 650000,
 INSERT INTO `area_code` VALUES ('广东', '云浮', 440000, '113.280637,23.125178', '0766', 445300, '112.044439,22.929801', '云浮,郁南县,罗定市,新兴县,云安区,云城区', 'CN-GD');
 INSERT INTO `area_code` VALUES ('江苏', '宿迁', 320000, '118.767413,32.041544', '0527', 321300, '118.275162,33.963008', '宿迁,沭阳县,泗阳县,泗洪县,宿豫区,宿城区', 'CN-JS');
 INSERT INTO `area_code` VALUES ('云南', '西双版纳傣族自治州', 530000, '102.712251,25.040609', '0691', 532800, '100.797941,22.001724', '西双版纳傣族自治州,景洪市,勐海县,勐腊县', 'CN-YN');
-INSERT INTO `area_code` VALUES ('山东', '莱芜', 370000, '117.000923,36.675807', '0634', 371200, '117.677736,36.214397', '莱芜,莱城区,钢城区', 'CN-SD');
+INSERT INTO `area_code` VALUES ('山东', '莱芜', 370000, '117.000923,36.675807', '0531', 371200, '117.677736,36.214397', '莱芜,莱城区,钢城区', 'CN-SD');
 INSERT INTO `area_code` VALUES ('江西', '萍乡', 360000, '115.892151,28.676493', '0799', 360300, '113.852186,27.622946', '萍乡,湘东区,安源区,上栗县,莲花县,芦溪县', 'CN-JX');
 INSERT INTO `area_code` VALUES ('安徽', '安庆', 340000, '117.283042,31.86119', '0556', 340800, '117.043551,30.50883', '安庆,潜山市,岳西县,桐城市,迎江区,宜秀区,太湖县,望江县,宿松县,大观区,怀宁县', 'CN-AH');
 INSERT INTO `area_code` VALUES ('香港特别行政区', '葵青区', 810000, '114.173355,22.320048', '1852', 810017, '114.13918,22.363908', '葵青区', 'CN-HK');
