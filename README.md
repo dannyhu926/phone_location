@@ -1,5 +1,5 @@
 # phone_location.sql
-手机号码归属地数据库，2023年5月 503112条数据  手机归属地查询，运营商，邮编，区号。
+手机号码归属地数据库，2023年10月 503527条数据  手机归属地查询，运营商，邮编，区号。
 
 手机号可以携号转网归属运营商不一定准确
 
@@ -43,4 +43,9 @@ select city_code select * from region where LENGTH(city_code)>2 and level>1
 移动  10086
 
 
-SELECT count(DISTINCT city_code) aa, city from phone GROUP BY city HAVING aa>1
+SELECT count(DISTINCT city_code) aa, city from phone_location GROUP BY city HAVING aa>1
+
+
+SELECT CONCAT("update phone_location set post_code='",post_code,"', area_code='",area_code,"' where city_code='",city_code,"' and area_code is null;") from phone_location where city_code in(
+   SELECT DISTINCT city_code from phone_location where area_code is null
+) and area_code is not null GROUP BY city_code
