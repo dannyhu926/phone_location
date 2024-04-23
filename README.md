@@ -1,5 +1,5 @@
 # phone_location.sql
-手机号码归属地数据库，2023年12月 504263条数据  手机归属地查询，运营商，邮编，区号。
+手机号码归属地数据库，2024年02月 504596条数据  手机归属地查询，运营商，邮编，区号。
 
 手机号可以携号转网归属运营商不一定准确
 
@@ -52,4 +52,4 @@ SELECT CONCAT("update phone_location set post_code='",post_code,"', province='",
 SELECT DISTINCT city_code from phone_location where area_code is null
 ) and area_code is not null GROUP BY city_code
 
-SELECT concat("update phone_location set isp='",isp,"' where pref='",pref,"' and isp is null;") aaa from phone_location where isp is not null and pref in (SELECT DISTINCT pref from phone_location where isp is null) GROUP BY isp,pref 
+SELECT concat("update phone_location set isp='",isp,"',isp_type=",isp_type," where pref='",pref,"' and isp is null;") aaa from phone_location where isp is not null and pref in (SELECT DISTINCT pref from phone_location where isp is null) GROUP BY isp,pref 
