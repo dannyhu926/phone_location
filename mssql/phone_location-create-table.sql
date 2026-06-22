@@ -1,6 +1,6 @@
 
 CREATE TABLE dbo.phone_location (
-    id INT NOT NULL IDENTITY(1,1), -- 自增主键替代AUTO_INCREMENT
+    id INT NOT NULL , --  IDENTITY(1,1),  -- 不要自增，因为insert时省略了字段名称，无法开启标识插入。
     pref NVARCHAR(10) NULL DEFAULT NULL,
     phone NVARCHAR(20) NOT NULL,
     province NVARCHAR(45) NULL DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE dbo.phone_location (
     post_code NVARCHAR(100) NULL DEFAULT NULL,
     city_code NVARCHAR(10) NOT NULL,
     area_code NVARCHAR(100) NULL DEFAULT NULL,
-    create_time DATETIME NOT NULL DEFAULT GETDATE(), -- SQL Server当前时间函数
+    create_time DATETIME NOT NULL DEFAULT GETDATE(), 
 
     -- 主键约束
     CONSTRAINT PK_phone_location_id PRIMARY KEY CLUSTERED (id),
